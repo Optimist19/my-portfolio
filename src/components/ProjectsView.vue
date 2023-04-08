@@ -1,88 +1,125 @@
 <template>
-	<div>
-		<p>ProjectsView</p>
-		<div v-for="api in newData" :key="api">
-			<p>{{ api.name }}</p>
-			<!-- <p>{{ api.url. }}</p> -->
-			<a :href="`${api.url.value}` "> click</a>
-			<p>{{ api.html_url }}</p>
-			<!-- <p>{{ api.url }}</p> -->
-			<div v-for="repo in api.owner" :key="repo.id">
-				{{ repo.id }}
+	<div class="container">
+		<p class="title">{{title}}</p>
+		<div class="con">
+			<div v-for="project in projects" :key="project.id" class="project-con">
+				<a :href="project.link" target="_blank">
+					<div v-if="show">
+						<i class="fa-solid fa-rotate fa-spin"></i>
+					</div>
+					<div v-else>
+						<img :src="project.img" alt="project-thumbnail" />
+					</div>
+					<p>
+						Name: {{project.name}}
+					</p>
+					<a :href="project.github" target="_blank"><button>Github-repo</button></a>
+					
+					<p>
+						Project-Des: {{ project.description }}
+					</p>
+				</a>
 			</div>
-
 		</div>
 	</div>
 </template>
 
 <script>
-import {onMounted, ref} from "vue"
+import data from "../../projects.json"
+import {ref} from "vue"
 export default {
 	name: "ProjectsView",
 	setup(){
+		const projects = ref(data)
+		const title = ref("Project")
+		const show = ref(true)
+		setTimeout(() =>{
+			show.value = false
+		},2000)
 
-		let newData = ref([])
-		// let url = ref("https://zippy-marzipan-7ed47e.netlify.app/")
-		let data = ref(null)
-		console.log(data)
-		onMounted(() =>{
-			// out()
-		})
+		console.log(projects)
 
-		async function out(){
-    await fetch('https://api.github.com/users/Optimist19/repos')
-    .then(res => res.json())
-    .then(result => data.value = result)
-	for(let i = 0; i < data.value.length; i++){
-		// if(i === 28 && i === 5){
-		// 	newData.value.push(data.value[i])
-		// }
 
-		
-		switch(i){
-			case 5:
-			newData.value.push(data.value[i],{url: "https://zippy-marzipan-7ed47e.netlify.app/"})
-			continue;
-			case 18:
-			newData.value.push(data.value[i])
-			continue;
-			case 19:
-			newData.value.push(data.value[i])
-			continue;
-			case 21:
-			newData.value.push(data.value[i])
-			continue;
-			case 22:
-			newData.value.push(data.value[i])
-			continue;
-			case 27:
-			newData.value.push(data.value[i])
-			continue;
-			case 28:
-			newData.value.push(data.value[i])
-			break;
-			default:
-				console.log("You are doing well")
+		return{
+			projects,
+			title,
+			show
 		}
-	}
-	}
-	console.log(newData.value)
-
-
-	return{
-		data,
-		out,
-		newData,
-		// url
-	}
 
 	}
 }
 </script>
 
 <style scoped>
-div{
-	height: 60vh;
-	background-color: black;
+
+.title{
+	padding-top: 4vh;
+	padding-bottom: 4vh;
+	text-align: center;
+	color: green;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
 }
+.con{
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'Lato', sans-serif;
+	gap: 4vh 0;
+}
+
+.project-con{
+	max-width: 40vw;
+	margin: 0 auto;
+}
+
+.project-con p{
+	margin-top: 1vh;
+}
+
+img{
+	max-width: 40vw;
+}
+
+a{
+	color: rgb(250, 249, 246);
+	text-decoration: none;
+}
+
+button{
+	margin-top: 5px;
+	cursor: pointer;
+	background-color: green;
+	border: none;
+	padding: 2px 2px;
+	border-radius:  2px;
+}
+
+@media only screen and (max-width: 574px) {
+	.con{
+		display: block;
+	}
+
+	.project-con{
+		max-width: 80vw;
+	}
+
+	img{
+		max-width: 80vw;
+
+	}
+
+	.title{
+		font-size: 18px;
+	}
+}
+
+
+@media only screen and (max-width: 375px) {
+	.title{
+		font-size: 16px;
+	}
+}
+
+
 </style>

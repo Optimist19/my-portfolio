@@ -2,39 +2,39 @@
   <div class="header">
     <h1>{{myPortfolio}}</h1>
     <div class="a-con">
-      <a href="#home">{{home}}</a>
       <a href="#about">{{aboutMe}}</a>
       <a href="#project">{{projects}}</a>
+      <a href="#contact">{{contact}}</a>
     </div>
   </div>
-  <AboutView id="home" />
-  <ProjectsView id="about" />
-  <HomeView id="project" />
+  <AboutView id="about" />
+  <ProjectsView id="project" />
+  <ContactView id="contact" />
 </template>
 
 <script>
 import {ref} from "vue"
-import HomeView from './components/HomeView.vue'
+import ContactView from './components/ContactView.vue'
 import AboutView from './components/AboutView.vue'
 import ProjectsView from './components/ProjectsView.vue'
 
 export default {
   name: 'App',
   components: {
-    HomeView,
+    ContactView,
     AboutView,
     ProjectsView
   },
   setup(){
     const myPortfolio = ref("My Portfolio")
-    const home = ref("Home")
+    const contact = ref("Contact")
     const aboutMe = ref("About")
     const projects = ref("Project")
 
 
     return{
       myPortfolio,
-      home,
+      contact,
       aboutMe,
       projects
     }
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 html {
   scroll-behavior: smooth;
 }
@@ -51,35 +51,46 @@ html {
   height: 10vh;
   position: fixed;
   top: 0;
-  /* left: -100%; */
-  background-color: blueviolet;
   width: 100%;
   display: flex;
-
   justify-content: space-around;
   align-items: center;
 
 }
 
 h1{
-
-  color: rgb(250, 249, 246);
+  font-family: 'Lato', sans-serif;
+  color: green;
 }
 
-.a-con{
-
-}
 a{
-  color: rgb(250, 249, 246);
+  color: green;
   text-decoration: none;
   margin-right: 2vw;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: bold;
+	font-size: 22px;
 }
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+
+@media only screen and (max-width: 574px) {
+  h1{
+    font-size: 18px;
+  }
+
+  a{
+    font-size: 18px;
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+  h1{
+    font-size: 14px;
+  }
+
+  a{
+    font-size: 14px;
+  }
+}
+
 </style>

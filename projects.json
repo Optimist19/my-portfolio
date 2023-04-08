@@ -1,0 +1,51 @@
+[
+	{
+		"id": 1,
+		"name": "Dribbble",
+		"link": "https://my-dribbble-web.netlify.app/",
+		"img": "https://github.com/Optimist19/portfolio-photo/blob/master/img/Dribbble.png?raw=true",
+		"description": "I decided to recreate the original website to work on my designing skills and responsiveness.",
+		"github": "https://github.com/Optimist19/my-dribble"
+	},
+	{
+		"id": 2,
+		"name": "Rallytrade",
+		"link": "https://my-web-rally-trade.netlify.app/",
+		"img": "https://github.com/Optimist19/portfolio-photo/blob/master/img/Rally-trade.png?raw=true",
+		"description": "I used the original site to create this app to test my skills in HTML and CSS. It is also responsive.",
+		"github": "https://github.com/Optimist19/Rally-trade"
+	},
+	{
+		"id": 3,
+		"name": "Game",
+		"link": "https://js-number-prediction.netlify.app/",
+		"img": "https://github.com/Optimist19/portfolio-photo/blob/master/img/js-game.png?raw=true",
+		"description": "This is a game, you predict the upcoming number. It is basically a prediction game.",
+		"github": "https://github.com/Optimist19/My-own-javascript-game"
+	},
+	{
+		"id": 4,
+		"name": "Youtube",
+		"link": "https://youtube-vue.netlify.app/",
+		"img": "https://github.com/Optimist19/portfolio-photo/blob/master/img/youtube.png?raw=true",
+		"description": "This project was initially created using HTML and CSS then converted using Vue.js. The App is responsive as well. ",
+		"github": "https://github.com/Optimist19/youtube-vue"
+	},
+	{
+		"id": 5,
+		"name": "Quiz",
+		"link": "http://questions-game-app.netlify.app/",
+		"img": "https://github.com/Optimist19/portfolio-photo/blob/master/img/Quiz.png?raw=true",
+		"description": "This is a project that has 3 subjects, each subject has 3 questions, a user get to answer the questions and get scored immediately.",
+		"github": "https://github.com/Optimist19/Quiz"
+	},
+	{
+		"id": 6,
+		"name": "Note-app",
+		"link": "https://note-take-in-app.netlify.app/",
+		"img": "https://github.com/Optimist19/portfolio-photo/blob/master/img/note.png?raw=true",
+		"description": "The is an App that keeps in your texts for you. It simply serves as a note, which also keeps the date a note is being made.",
+		"github": "https://github.com/Optimist19/my_note_app"
+	}
+
+]
